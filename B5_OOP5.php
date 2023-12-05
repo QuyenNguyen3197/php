@@ -44,6 +44,7 @@
     
     $bird = new Bird();
     $bird -> sound();
+    $bird -> fly();
 
 
 ?>
