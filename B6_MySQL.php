@@ -1,10 +1,10 @@
 <?php
     $conn = mysqli_connect('localhost', 'root', '123456');
-    if($conn){
-        echo "<br> Connect success!";
-    }else{
-        die("Database connect faild");
-    }
+    // if($conn){
+    //     echo "<br> Connect success!";
+    // }else{
+    //     die("Database connect faild");
+    // }
     
 ?>
 
@@ -21,10 +21,21 @@
     <div class="container"> <!-- tạo div với class nhanh : dấu "." + tên class -->
         <div class="row">
             <div class="col-md-6">
+                <form action = "B6_MySQL.php" method = "post">
+                <h1>Login</h1>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="********">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value = "Login">
+                    <input type="reset" value = "Reset">
+                </div>
+                </form>
             </div>
         </div>
     </div>
