@@ -1,6 +1,7 @@
 <?php 
     include "connect.php";
     function createRow(){
+        if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
         $fullname = $_POST['fullname'];
@@ -11,6 +12,7 @@
         }else{
             echo "Record create";
         }
+    }
     }
     // if(isset($_POST['submit'])){
         

@@ -1,4 +1,4 @@
-<form action = "register.php" method = "post">
+<form action = "index.php" method = "post">
                 <h1>Login</h1>
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Fullname</label>

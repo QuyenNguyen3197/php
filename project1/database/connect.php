@@ -2,7 +2,7 @@
 <?php
     $conn = mysqli_connect('localhost', 'root', '123456');
     if(!$conn){
-        die("Connect failed");
+        die("Database connection failed");
     }
     
     
