@@ -1,10 +1,23 @@
+
+<!-- bật xmapp -> MySQL -> tạo database mới, chọn utf8-general-ci, chạy như bthg -->
 <?php
-    $conn = mysqli_connect('localhost', 'root', '123456');
-    // if($conn){
-    //     echo "<br> Connect success!";
-    // }else{
-    //     die("Database connect faild");
-    // }
+    if(isset($_POST['submit'])){
+        $conn = mysqli_connect('localhost', 'root', '123456');
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        if($conn){
+            if ($email == "admin@gmail.com"){
+                if($password == "123"){
+                    echo "<br> Login success!";
+                }else{
+                    echo "<br> Password incorrect!";
+                }
+            }else{
+                echo "<br> Email incorrect!";
+            }
+        }
+    }
+    
     
 ?>
 
@@ -25,14 +38,14 @@
                 <h1>Login</h1>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email" name = "email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="********">
+                    <input type="password" name = "password" class="form-control" id="password" placeholder="********">
                 </div>
                 <div class="mb-3">
-                    <input type="submit" value = "Login">
+                    <input type="submit" value = "Login" name ="submit">
                     <input type="reset" value = "Reset">
                 </div>
                 </form>
