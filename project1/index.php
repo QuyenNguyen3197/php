@@ -20,7 +20,7 @@
     <div class="container"> <!-- tạo div với class nhanh : dấu "." + tên class -->
         <div class="row">
             <div class="col-md-6">
-                <?php include "login.php";?>
+                <?php include "register.php";?>
             </div>
         </div>
     </div>
