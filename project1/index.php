@@ -1,5 +1,4 @@
 
-<?php include "database/connect.php"; ?>
 <?php include "database/function.php"; ?>
 
 
@@ -20,7 +19,7 @@
     <div class="container"> <!-- tạo div với class nhanh : dấu "." + tên class -->
         <div class="row">
             <div class="col-md-6">
-                <?php include "register.php";?>
+                <?php include "Userlist.php";?>
             </div>
         </div>
     </div>
