@@ -1,4 +1,4 @@
-
+<?php createRow(); ?>
             <form action="index.php" method="post">
                 <h1>Register</h1>
                 <div class="mb-3">

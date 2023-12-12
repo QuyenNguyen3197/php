@@ -1,5 +1,6 @@
 <?php 
     include "connect.php";
+    
     function createRow(){
         if(isset($_POST['submit'])){
         global $conn;
