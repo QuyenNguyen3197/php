@@ -1,6 +1,6 @@
 <?php 
     include "connect.php";
-    
+
     function createRow(){
         if(isset($_POST['submit'])){
         global $conn;
@@ -48,6 +48,8 @@
             <td>".$email."</td>
             <td>".$fullname."</td>
             <td>".$pasword."</td>
+            <td><a href = '#'><i class='fa-solid fa-pen-to-square'></i></a></td>
+            <td><a href = '#'><i class='fa-solid fa-trash' style='color: #511f31;'></i></a></td>
             </tr>";
         }
     }
