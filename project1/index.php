@@ -1,7 +1,6 @@
 
-<?php include "database/connect.php"; ?>
 <?php include "database/function.php"; ?>
-
+<?php createRow(); ?>
 
 <!-- bootstrap/ introduction => copy cấu trúc => formcontrol -> copy form-->
 <!doctype html>

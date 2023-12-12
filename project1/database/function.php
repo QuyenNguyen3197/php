@@ -2,10 +2,12 @@
     include "connect.php";
     function createRow(){
         if(isset($_POST['submit'])){
+        global $conn;
         $email = $_POST['email'];
         $password = $_POST['password'];
         $fullname = $_POST['fullname'];
         $query = "INSERT INTO users(email, password, fullname) VALUES('$email','$password','$fullname')";
+        // echo ('hihi');
         $result = mysqli_query($conn, $query);
         if(!$result){
             die("Query failed!".mysqli_error());
