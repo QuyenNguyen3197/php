@@ -1,6 +1,6 @@
 
 <?php include "database/function.php"; ?>
-<?php createRow(); ?>
+<?php readRows(); ?>
 
 <!-- bootstrap/ introduction => copy cấu trúc => formcontrol -> copy form-->
 <!doctype html>
@@ -19,7 +19,7 @@
     <div class="container"> <!-- tạo div với class nhanh : dấu "." + tên class -->
         <div class="row">
             <div class="col-md-6">
-                <?php include "register.php";?>
+                <?php include "UserList.php";?>
             </div>
         </div>
     </div>

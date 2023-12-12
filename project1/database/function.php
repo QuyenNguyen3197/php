@@ -16,6 +16,40 @@
         }
     }
     }
+
+    function readRows(){
+        global $conn;
+        $query = "SELECT * FROM users";
+        $result = mysqli_query($conn, $query);
+        if(!$result){
+            die("Query failed!".mysqli_error());
+        }
+        while($row = mysqli_fetch_assoc($result)){
+            print_r($row);
+        }
+    }
+
+
+    function showAllData(){
+        global $conn;
+        $query = "SELECT * FROM users";
+        $result = mysqli_query($conn, $query);
+        if(!$result){
+            die("Query failed!".mysqli_error());
+        }
+        $i = 0;
+        while($row = mysqli_fetch_assoc($result)){
+            $email = $row['email'];
+            $fullname = $row['fullname'];
+            $pasword = $row['password'];
+            echo "<tr>
+            <td>".$i++."</td>
+            <td>".$email."</td>
+            <td>".$fullname."</td>
+            <td>".$pasword."</td>
+            </tr>";
+        }
+    }
     // if(isset($_POST['submit'])){
         
         
