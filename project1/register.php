@@ -1,5 +1,9 @@
-<?php createRow(); ?>
-            <form action="index.php" method="post">
+
+           <?php
+            // createRow();   
+        
+        ?>
+           <form action="index.php" method="post">
                 <h1>Register</h1>
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Fullname</label>
@@ -14,8 +18,9 @@
                     <input type="password" name="password" class="form-control" id="password" placeholder="********">
                 </div>
                 <div class="mb-3">
-                    <input type="submit" value="Register" name="submit">
+                    <input type="submit" value="Register" name="insert">
                     <input type="reset" value="Reset">
+                    
                 </div>
                 </form>
             

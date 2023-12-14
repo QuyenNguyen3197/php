@@ -1,8 +1,8 @@
 <?php 
     include "connect.php";
-    
+
     function createRow(){
-        if(isset($_POST['submit'])){
+        if(isset($_POST['insert'])){
         global $conn;
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -48,22 +48,40 @@
             <td>".$email."</td>
             <td>".$fullname."</td>
             <td>".$pasword."</td>
+            <td><a href = 'updateForm.php?email=$email&fullname=$fullname'><i class='fa-solid fa-pen-to-square'></i></a></td>
+            <td><a href = 'index.php?email=$email&delete=delete'><i class='fa-solid fa-trash' style='color: #511f31;'></i></a></td>
             </tr>";
         }
     }
-    // if(isset($_POST['submit'])){
-        
-        
-        // if($conn){
-        //     if ($email == "admin@gmail.com"){
-        //         if($password == "123"){
-        //             echo "<br> Login success!";
-        //         }else{
-        //             echo "<br> Password incorrect!";
-        //         }
-        //     }else{
-        //         echo "<br> Email incorrect!";
-        //     }
-        // }
-    //}
+
+        function updateRow(){
+            if(isset($_POST['update'])){
+                global $conn;
+                $query = "UPDATE users SET email='".$_POST['email']."',
+                                           password='".$_POST['password']."',
+                                           fullname='".$_POST['fullname']."' WHERE email='".$_POST['emailOld']."'";
+                $result = mysqli_query($conn,$query);
+                
+            if(!$result){
+                die("Query failed!".mysqli_error());
+            }else{
+                echo "Record update";
+            }
+        }
+    }
+
+    function deleteRow(){
+        if(isset($_GET['delete'])){
+            global $conn;
+            $query = "DELETE FROM users WHERE email='".$_GET['email']."'";
+            $result = mysqli_query($conn,$query);
+                
+            if(!$result){
+                die("Query failed!".mysqli_error());
+            }else{
+                echo "Record delete success";
+            }
+        }
+}
+  
 ?>

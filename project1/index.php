@@ -1,5 +1,11 @@
 
 <?php include "database/function.php"; ?>
+<?php
+    createRow();   
+    deleteRow();
+    updateRow();
+?>
+
 
 
 <!-- bootstrap/ introduction => copy cấu trúc => formcontrol -> copy form-->
