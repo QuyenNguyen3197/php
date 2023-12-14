@@ -2,7 +2,7 @@
     include "connect.php";
 
     function createRow(){
-        if(isset($_POST['submit'])){
+        if(isset($_POST['insert'])){
         global $conn;
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -53,19 +53,21 @@
             </tr>";
         }
     }
-    // if(isset($_POST['submit'])){
-        
-        
-        // if($conn){
-        //     if ($email == "admin@gmail.com"){
-        //         if($password == "123"){
-        //             echo "<br> Login success!";
-        //         }else{
-        //             echo "<br> Password incorrect!";
-        //         }
-        //     }else{
-        //         echo "<br> Email incorrect!";
-        //     }
-        // }
-    //}
+
+        function updateRow(){
+            if(isset($_POST['update'])){
+                global $conn;
+                $query = "UPDATE users SET email='".$_POST['email']."',
+                                           password='".$_POST['password']."',
+                                           fullname='".$_POST['fullname']."' WHERE email='".$_POST['emailOld']."'";
+                $result = mysqli_query($conn,$query);
+                
+            if(!$result){
+                die("Query failed!".mysqli_error());
+            }else{
+                echo "Record create";
+            }
+        }
+    }
+  
 ?>
