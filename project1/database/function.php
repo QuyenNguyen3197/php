@@ -48,8 +48,8 @@
             <td>".$email."</td>
             <td>".$fullname."</td>
             <td>".$pasword."</td>
-            <td><a href = '#'><i class='fa-solid fa-pen-to-square'></i></a></td>
-            <td><a href = '#'><i class='fa-solid fa-trash' style='color: #511f31;'></i></a></td>
+            <td><a href = 'updateForm.php?email=$email&fullname=$fullname'><i class='fa-solid fa-pen-to-square'></i></a></td>
+            <td><a href = 'index.php?email=$email'><i class='fa-solid fa-trash' style='color: #511f31;'></i></a></td>
             </tr>";
         }
     }

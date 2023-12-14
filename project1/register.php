@@ -1,5 +1,5 @@
 <?php createRow(); ?>
-            <form action="index.php" method="post">
+            <form action="register.php" method="post">
                 <h1>Register</h1>
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Fullname</label>
