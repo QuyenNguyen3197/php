@@ -2,7 +2,7 @@
 <?php include "database/function.php"; ?>
 <?php
     createRow();   
-           
+    deleteRow();
     updateRow();
 ?>
 

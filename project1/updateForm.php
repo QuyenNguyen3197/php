@@ -31,7 +31,7 @@
                 <?php
                     while($row = mysqli_fetch_assoc($result)){
                 ?>
-                <input type="hidden" name="email" value="<?=$row['email']?>">
+                <input type="hidden" name="emailOld" value="<?=$row['email']?>">
                 <h1>Register</h1>
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Fullname</label>
