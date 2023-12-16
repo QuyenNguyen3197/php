@@ -83,5 +83,33 @@
             }
         }
 }
-  
+//================LOGIN==============//
+    function login($email, $password){
+        
+        if(isset($_POST['login'])){
+        global $conn;
+        //$password = mysqli_real_escape_string($conn, $password);
+        $query = "SELECT * FROM `users` WHERE email='".$_POST['email']."' and password='".$_POST['password']."'";
+        // echo $query;
+        $result = mysqli_query($conn, $query);
+        if(!$result){
+            die("Query failed!".mysqli_error());
+        }
+        
+        while($row = mysqli_fetch_array($result)){
+            $db_email = $row['email'];
+            $db_password = $row['password'];
+            $db_fullname = $row['fullname'];
+
+            if($password===$db_password && $email===$db_email){
+                $_SESSION['email'] = $db_email;
+                $_SESSION['fullname'] = $db_fullname;
+                header('Location: /project1/admin');
+            }else{
+                header('Location: /project1/login.php');
+            }
+        }
+    }
+    }
+  //================LOGIN==============//
 ?>

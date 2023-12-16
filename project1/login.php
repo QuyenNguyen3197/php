@@ -1,3 +1,8 @@
+<?php include "includes/header.php";?>
+
+    <div class="container"> <!-- tạo div với class nhanh : dấu "." + tên class -->
+        <div class="row">
+            <div class="col-md-6">
 
             <form action = "index.php" method = "post">
                 <h1>Login</h1>
@@ -10,7 +15,14 @@
                     <input type="password" name = "password" class="form-control" id="password" placeholder="********">
                 </div>
                 <div class="mb-3">
-                    <input type="submit" value = "Login" name ="submit">
+                    <input type="submit" value = "Login" name ="login">
                     <input type="reset" value = "Reset">
                 </div>
                 </form>
+
+            </div>
+        </div>
+    </div>
+
+    <?php include "includes/footer.php";?>
+            
