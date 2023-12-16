@@ -15,11 +15,11 @@
                     <input type="password" name = "password" class="form-control" id="password" placeholder="********">
                 </div>
                 <div class="mb-3">
-                    <input type="submit" value = "Login" name ="submit">
+                    <input type="submit" value = "Login" name ="login">
                     <input type="reset" value = "Reset">
                 </div>
                 </form>
-                
+
             </div>
         </div>
     </div>
