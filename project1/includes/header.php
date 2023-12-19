@@ -1,9 +1,9 @@
-<?php session_start();
-if(isset($_SESSION['email'])){
-  echo $_SESSION['email'];
-}
+//<?php 
+//if(isset($_SESSION['email'])){
+  //echo $_SESSION['email'];
+//}
   
-?>
+//?>
 
 <!-- bootstrap/ introduction => copy cấu trúc => formcontrol -> copy form-->
 <!doctype html>

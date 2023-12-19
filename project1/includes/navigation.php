@@ -12,9 +12,15 @@
         <li class="nav-item">
           <a class="nav-link" href="register.php">Register</a>
         </li>
-        <li class="nav-item">
+        <!-- <?php 
+          //if(isset($_SESSION['email'])){
+            ?> -->
+            <li class="nav-item">
           <a class="nav-link" href="login.php">Login </a>
         </li>
+        
+          <!-- <?php //} ?> -->
+
         <li class="nav-item">
           <a class="nav-link" href="#">Logout </a>
         </li>
