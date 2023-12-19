@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include "connect.php";
 
     function createRow(){
@@ -102,14 +103,29 @@
             $db_fullname = $row['fullname'];
 
             if($password===$db_password && $email===$db_email){
-                $_SESSION['email'] = $db_email;
-                $_SESSION['fullname'] = $db_fullname;
+                $_SESSION['s_email'] = $db_email;
+                $_SESSION['s_fullname'] = $db_fullname;
                 header('Location: /project1/admin');
             }else{
                 header('Location: /project1/login.php');
             }
         }
     }
+    }
+
+    function checkLogin($redirectLocation){
+        if(isLogin()){
+            header('Location: /project1/admin');
+        }else{
+            header('Location: /project1');
+        }
+    }
+
+    function isLogin(){
+        if(isset($_SESSION['s_email'])){
+            return true;
+        }
+        return false;
     }
   //================LOGIN==============//
 ?>

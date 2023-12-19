@@ -4,7 +4,9 @@
     createRow();   
     deleteRow();
     updateRow();
-    login($_POST['email'], $_POST['password']);
+    if(isset($_POST['login'])){
+        login($_POST['email'], $_POST['password']);
+    }
 ?>
   <?php include "includes/header.php";?>
 
