@@ -113,19 +113,5 @@
     }
     }
 
-    function checkLogin($redirectLocation){
-        if(isLogin()){
-            header('Location: /project1/admin');
-        }else{
-            header('Location: /project1');
-        }
-    }
-
-    function isLogin(){
-        if(isset($_SESSION['s_email'])){
-            return true;
-        }
-        return false;
-    }
   //================LOGIN==============//
 ?>
