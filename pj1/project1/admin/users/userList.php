@@ -1,30 +1,7 @@
-<?php include "../../database/function.php"?>
-<?php 
-  updateRow();
-  createRow();
-  deleteRow();
+<?php
+    include "../includes/header.php";
 ?>
-
-<?php include "../includes/header.php" ?>
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Blank Page
-                    <small>Subheading</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                    </li>
-                    <li class="active">
-                        <i class="fa fa-file"></i> Blank Page
-                    </li>
-                </ol>
-                <p>
-                    <!-- noi dung cua index -->
+<!-- noi dung cua index -->
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -42,7 +19,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php showAllData();  ?>
+                <?php
+     $conn = mysqli_connect('localhost:3308', 'root','','banhang');
+     if(!$conn)
+     {
+        die("Database connection failed");
+     }
+    
+        $query = "SELECT * FROM users";
+        $result =mysqli_query($conn,$query);
+        if(!$result){
+            die("Query failed!".mysqli_error($conn));
+        }
+        
+        $i=0;
+        while($row = mysqli_fetch_assoc($result))
+        {
+            $email = $row['email'];
+            $fullName = $row['fullName'];
+            $password = $row['password'];
+            echo "<tr>
+            <td>".$i++."</td>
+            <td>".$email."</td>
+            <td>".$fullName."</td>
+            <td>".$password."</td>
+            <td><a href='updateForm.php?email=$email&password=$password'><i class='fa-solid fa-pen-to-square text-success'></i></a></td>
+            <td><a href='delete.php?email=$email&delete=delete'><i class='fa-solid fa-trash text-danger'></i></a></td>
+            </tr>";
+        }
+
+       
+    ?>
                 </tbody>
                 </table>
 <!-- ket thuc noi dung hien thi -->
@@ -51,40 +58,3 @@
         </div>
     </div>
 <!-- ket thuc noi dung cua index   -->
-                </p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container-fluid -->
-
-</div>
-<!-- /#page-wrapper -->
-
-</div>
-<!-- /#wrapper -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
