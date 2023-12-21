@@ -11,7 +11,7 @@
             
             $result =mysqli_query($conn,$query);
             if(!$result){
-                die("Query failed!".mysqli_error());
+                die("Query failed!".mysqli_error($conn));
             }else{
                 echo "Record Create";
             }
@@ -23,7 +23,7 @@
         $query = "SELECT * FROM users";
         $result =mysqli_query($conn,$query);
         if(!$result){
-            die("Query failed!".mysqli_error());
+            die("Query failed!".mysqli_error($conn));
         }
         while($row = mysqli_fetch_assoc($result))
         {
@@ -37,8 +37,9 @@
         $query = "SELECT * FROM users";
         $result =mysqli_query($conn,$query);
         if(!$result){
-            die("Query failed!".mysqli_error());
+            die("Query failed!".mysqli_error($conn));
         }
+        return $result;
         $i=0;
         while($row = mysqli_fetch_assoc($result))
         {
@@ -64,7 +65,7 @@
             fullName=' ".$_POST['fullName']."' WHERE email='".$_POST['emailOld']."'";
             $result = mysqli_query($conn,$query);
             if(!$result){
-                die("Query failed!".mysqli_error());
+                die("Query failed!".mysqli_error($conn));
             }else{
                 echo "Record Update";
             }
@@ -77,7 +78,7 @@
            
             $result = mysqli_query($conn,$query);
             if(!$result){
-                die("Query failed!".mysqli_error());
+                die("Query failed!".mysqli_error($conn));
             }else{
                 echo "Record Delete Success!";
             }
@@ -94,7 +95,7 @@
             //echo $query;
             $result =mysqli_query($conn,$query);
             if(!$result){
-                die("Query failed!".mysqli_error());
+                die("Query failed!".mysqli_error($conn));
             }
             while($row = mysqli_fetch_array($result))
             {
@@ -108,7 +109,7 @@
                     $_SESSION['s_email'] = $db_email;
                     $_SESSION['s_fullname']=$db_fullname;
                     
-                    header('Location: /project1/admin');
+                    header('Location: /project1/admin/');
                 }else{
                     header('Location: /project1/login.php');
                 }

@@ -1,9 +1,29 @@
-<?php include "database/function.php"?>
+
 <?php
-    global $conn;
+    $conn = mysqli_connect('localhost:3308', 'root','','banhang');
+    if(!$conn)
+    {
+       die("Database connection failed");
+    }
+
     $sql = "SELECT * FROM `users` WHERE email='".$_GET['email']."'";
     $result =mysqli_query($conn,$sql);
     
+    if(isset($_POST['update'])){
+        global $conn;
+        $query = "UPDATE users SET 
+        email='".$_POST['email']."' ,
+        password='".$_POST['password']."', 
+        fullName=' ".$_POST['fullName']."' WHERE email='".$_POST['emailOld']."'";
+        $result = mysqli_query($conn,$query);
+        if(!$result){
+            die("Query failed!".mysqli_error($conn));
+        }else{
+            echo "Record Update";
+        }
+    }
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +41,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- form update -->
-            <form action="index.php", method="post">
+            <form action="updateForm.php", method="post">
                 <?php
                 while($row = mysqli_fetch_assoc($result))
                 {
