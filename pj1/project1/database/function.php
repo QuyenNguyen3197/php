@@ -109,9 +109,9 @@
                     $_SESSION['s_email'] = $db_email;
                     $_SESSION['s_fullname']=$db_fullname;
                     
-                    header('Location: /project1/admin/');
+                    header('Location: pj1/project1/admin/');
                 }else{
-                    header('Location: /project1/login.php');
+                    header('Location: pj1/project1/login.php');
                 }
             }
         }
